@@ -19,7 +19,7 @@ public class HumanPlayer implements Player {
 	}
 
 	@Override
-	public void updateLastRoundInfo(int yourMove, int opponentMove, int outcome) {
+	public void saveLastRoundData(int yourMove, int opponentMove, int outcome) {
 		System.out.print("\n Winner:\t");
 		if (outcome == RPS.TIE) 		System.out.println("tie"); 
 		if (outcome == RPS.YOU) 		System.out.println("you"); 

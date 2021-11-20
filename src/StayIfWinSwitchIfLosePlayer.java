@@ -18,7 +18,7 @@ public class StayIfWinSwitchIfLosePlayer implements Player {
 	}
 
 	@Override
-	public void updateLastRoundInfo(int yourMove, int opponentMove, int outcome) {
+	public void saveLastRoundData(int yourMove, int opponentMove, int outcome) {
 		if (outcome == RPS.OPPONENT) {
 			prevMove = getMoveToBeat(opponentMove);
 		}

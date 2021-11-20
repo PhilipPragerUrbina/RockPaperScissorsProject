@@ -19,13 +19,13 @@ public class RunMe {
 					+ game.getP2Percent() + "%): " + RPS.intToString(p2move)
 					+ "\tWinner: " + RPS.getWinnerString(winner));
 
-			p1.updateLastRoundInfo(p1move, p2move, RPS.getWinnerFor(1, winner)); // update
+			p1.saveLastRoundData(p1move, p2move, RPS.getWinnerFor(1, winner)); // update
 																		// the
 																		// players
 																		// with
 																		// the
 																		// results
-			p2.updateLastRoundInfo(p2move, p1move, RPS.getWinnerFor(2, winner));
+			p2.saveLastRoundData(p2move, p1move, RPS.getWinnerFor(2, winner));
 		}
 
 		// Display ending statistics
