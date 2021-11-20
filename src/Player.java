@@ -4,7 +4,6 @@
  * about the previous game to use in future decisions.
  * 
  * @author David
- *
  */
 public interface Player {
 
