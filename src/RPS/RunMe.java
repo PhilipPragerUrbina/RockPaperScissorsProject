@@ -1,9 +1,6 @@
 package RPS;
 
-import RPS.Players.BeatLastMovePlayer;
-import RPS.Players.HumanPlayer;
-import RPS.Players.OpponentLastMovePlayer;
-import RPS.Players.WeightedRandomPlayer;
+import RPS.Players.*;
 
 public class RunMe {
 	private static final int TOTAL_GAMES = 1000;
@@ -11,8 +8,11 @@ public class RunMe {
 	public static void main(String[] args) {
 		RPS game = new RPS(); 							// create the game object
 
-		Player p1 = new HumanPlayer(); 	// create two players
-		Player p2 = new OpponentLastMovePlayer();
+		Player p1 = new SendingNetworkedPlayer(new HumanPlayer(), 5000); 	// create two players
+		Player p2 = new ReceivingNetworkedPlayer("127.0.0.1", 4000);
+		//Player p1 = new SendingNetworkedPlayer(new HumanPlayer(), 4000); 	// create two players
+		//Player p2 = new ReceivingNetworkedPlayer("127.0.0.1", 5000);
+
 
 		for (int i = 0; i < TOTAL_GAMES; i++) { 	// play many games together
 			int p1move = p1.getMove(); 				// get the moves from the players
