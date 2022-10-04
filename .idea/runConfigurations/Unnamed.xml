@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Unnamed" type="CompoundRunConfigurationType">
+    <toRun name="RunMe" type="Application" />
+    <toRun name="RunMe2" type="Application" />
+    <method v="2" />
+  </configuration>
+</component>

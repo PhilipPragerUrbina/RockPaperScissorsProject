@@ -46,6 +46,7 @@ public class SendingNetworkedPlayer implements Player {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        controlling_player = player;
     }
 
     //get the next move of the player, and send it over the network

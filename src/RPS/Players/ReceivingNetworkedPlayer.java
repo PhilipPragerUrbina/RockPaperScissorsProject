@@ -33,11 +33,12 @@ public class ReceivingNetworkedPlayer implements Player {
     public ReceivingNetworkedPlayer(String address, int port){
         try {
             Thread.sleep(50); //wait for server to start up(in case client starts up first)     todo: make scanning loop
+            System.out.println("Connecting to: " +  address + " " + port);
             //create socket and steam
             socket = new Socket(address,port);
             data_to_send = new DataOutputStream(socket.getOutputStream());
             incoming_data = new DataInputStream(socket.getInputStream());
-            System.out.println("Getting data from: " + socket.getInetAddress().getHostName());
+            System.out.println("Getting data from: " + address + " " + port);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -49,6 +50,7 @@ public class ReceivingNetworkedPlayer implements Player {
     @Override
     public int getMove() {
         try {
+            System.out.println("Awaiting opponent move...");
             int move = incoming_data.readInt(); //get move
             //no need for confirmation, will send back round data next
             System.out.println("Move received: " + RPS.intToString(move));
