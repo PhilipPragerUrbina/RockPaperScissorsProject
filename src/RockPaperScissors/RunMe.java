@@ -1,6 +1,6 @@
-package RPS;
+package RockPaperScissors;
 
-import RPS.Players.*;
+import RockPaperScissors.Players.*;
 
 public class RunMe {
 	private static final int TOTAL_GAMES = 1000;

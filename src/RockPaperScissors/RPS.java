@@ -1,4 +1,4 @@
-package RPS;
+package RockPaperScissors;
 
 public class RPS {
 	public static final int ROCK = 0;

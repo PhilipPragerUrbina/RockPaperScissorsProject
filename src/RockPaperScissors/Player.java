@@ -1,4 +1,4 @@
-package RPS;
+package RockPaperScissors;
 
 /***
  * An interface all players must implement.  It provides a method getMove() that returns the player's

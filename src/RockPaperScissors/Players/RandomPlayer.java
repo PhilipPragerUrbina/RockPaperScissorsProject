@@ -1,7 +1,7 @@
-package RPS.Players;
+package RockPaperScissors.Players;
 
-import RPS.Player;
-import RPS.RPS;
+import RockPaperScissors.Player;
+import RockPaperScissors.RPS;
 
 /***
  * This player moves at random with equal probability of each move.

@@ -1,6 +1,6 @@
-package RPS.Players;
+package RockPaperScissors.Players;
 
-import RPS.Player;
+import RockPaperScissors.Player;
 
 /***
  * This player plays the same sequence of moves in a repeated pattern.
