@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="RunMe2" type="Application" factoryName="Application" singleton="false">
-    <option name="MAIN_CLASS_NAME" value="RPS.RunMe" />
+    <option name="MAIN_CLASS_NAME" value="RockPaperScissors.RunMe" />
     <module name="RockPaperScissorsProject" />
     <option name="PROGRAM_PARAMETERS" value="127.0.0.1 127.0.0.1 b" />
     <method v="2">

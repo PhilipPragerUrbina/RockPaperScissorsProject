@@ -1,11 +1,11 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="RunMe" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="RPS.RunMe" />
+    <option name="MAIN_CLASS_NAME" value="RockPaperScissors.RunMe" />
     <module name="RockPaperScissorsProject" />
     <option name="PROGRAM_PARAMETERS" value="127.0.0.1 127.0.0.1 a" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="RPS.*" />
+        <option name="PATTERN" value="RockPaperScissors.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

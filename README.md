@@ -1,2 +1,2 @@
-# RPSAITemplate
-A template for creating RPS.RPS AIs
+# Rock paper Scissors Project
+A repository for AP comp sci
