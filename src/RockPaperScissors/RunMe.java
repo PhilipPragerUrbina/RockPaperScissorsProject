@@ -8,27 +8,11 @@ public class RunMe {
 	public static void main(String[] args) {
 		RPS game = new RPS(); 							// create the game object
 
-		//multiplayer demo
-		//create player variables
-		Player p1;
-		Player p2;
-		//check arguments
-		if(args.length != 3) {
-			System.err.println("Not correct arguments");
-			return;
-		}
-		//arguments are: ip_send_to ip_send_from player_a_or_b
-		//example with localhost: "127.0.0.1 127.0.0.1 a" and "127.0.0.1 127.0.0.1 b"
-		//ports 5000 and 4900 are used
-		if(args[2].equals("a")){
-			p1 = new SendingNetworkedPlayer(new HumanPlayer(), 5000); //create player a
-			p2 = new ReceivingNetworkedPlayer(args[0], 4900);
-		}else {
-			//switch order for correct connection orders
-			p1 = new ReceivingNetworkedPlayer(args[1], 5000); //create player b
-			p2 = new SendingNetworkedPlayer(new HumanPlayer(), 4900);
-		}
 
+		//	Player p1 = new SendingNetworkedPlayer(new HumanPlayer(), 5000);
+		//	Player p2 = new ReceivingNetworkedPlayer(args[0], 4900);
+	Player p1 = new PlayToBeatInfrequentPlays(1000);
+	Player p2 = new HumanPlayer();
 
 
 
@@ -59,3 +43,28 @@ public class RunMe {
 				+ game.getTiesPercent() + "%");
 	}
 }
+
+
+/*
+		//multiplayer demo
+		//create player variables
+		Player p1;
+		Player p2;
+		//check arguments
+		if(args.length != 3) {
+			System.err.println("Not correct arguments");
+			return;
+		}
+		//arguments are: ip_send_to ip_send_from player_a_or_b
+		//example with localhost: "127.0.0.1 127.0.0.1 a" and "127.0.0.1 127.0.0.1 b"
+		//ports 5000 and 4900 are used
+		if(args[2].equals("a")){
+			p1 = new SendingNetworkedPlayer(new HumanPlayer(), 5000); //create player a
+			p2 = new ReceivingNetworkedPlayer(args[0], 4900);
+		}else {
+			//switch order for correct connection orders
+			p1 = new ReceivingNetworkedPlayer(args[1], 5000); //create player b
+			p2 = new SendingNetworkedPlayer(new HumanPlayer(), 4900);
+		}
+
+*/
