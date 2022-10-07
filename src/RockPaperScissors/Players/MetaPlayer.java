@@ -32,7 +32,7 @@ public class MetaPlayer implements Player {
                 int move = p.getMove();
                 int win = rps.playRound(move,opponent_move);
                 p.saveLastRoundData(move,opponent_move,win);
-                if(win == )
+              //  if(win == )
             }
         }
         return best_player;
