@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MarkovModel {
     private int num_states;
     private int orders;
-    int[] state_matrix; //matrix
+    int[] state_matrix; //matrix(Actually a TENSOR if more than 2d)
     ArrayList<Integer> prev_states;
     int num_data = 0;//how much data has been collected
     public MarkovModel(int num_states, int orders){
