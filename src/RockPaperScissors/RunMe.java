@@ -11,7 +11,7 @@ public class RunMe {
 
 		//	Player p1 = new SendingNetworkedPlayer(new HumanPlayer(), 5000);
 		//	Player p2 = new ReceivingNetworkedPlayer(args[0], 4900);
-	Player p1 = new PlayToBeatInfrequentPlays(1000);
+	Player p1 = new MarkovPlayer(3);
 	Player p2 = new HumanPlayer();
 
 

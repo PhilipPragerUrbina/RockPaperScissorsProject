@@ -86,7 +86,7 @@ public class MarkovModel {
     }
 
     //get the total number of occurrences of a combination
-    //also updates the counts array with the specific counts
+    //updates count array with corresponding count values(make sure count array is size of num_states)
     private int getTotalCount(int[] combination, int[] counts) {
         int total_count = 0;
         //for all possible next states
