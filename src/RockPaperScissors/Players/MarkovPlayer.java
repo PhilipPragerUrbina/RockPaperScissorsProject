@@ -11,10 +11,15 @@ public class MarkovPlayer implements Player {
     private ArrayList<Integer> last_moves; //store last moves to make predictions
     private MarkovModel model; //the markov model
     private int num_to_save; //how many moves to save for the n order model
-    public MarkovPlayer(int order){
+    private boolean most_probable;
+    public MarkovPlayer(int order , boolean use_most_probable_move){
         num_to_save = order;
         model = new MarkovModel(3,order);
         last_moves = new ArrayList<>();
+        most_probable = use_most_probable_move;
+    }
+    public MarkovPlayer(int order){
+        this(order,false);
     }
 
 
@@ -29,7 +34,11 @@ public class MarkovPlayer implements Player {
             last_moves_array[i] = last_moves.get(i); //copy over
         }
         //make prediction
-        int opponent_move_prediction = model.makePrediction(last_moves_array); //todo add option for most probable move
+        int opponent_move_prediction = model.makePrediction(last_moves_array);
+        if(most_probable){
+            opponent_move_prediction = model.getMostProbableState(last_moves_array); //use most probable move instead of probability based move
+        }
+
         //return move to beat predicted move
         return getMoveToBeat(opponent_move_prediction);
     }

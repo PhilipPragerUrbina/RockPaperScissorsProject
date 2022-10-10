@@ -44,7 +44,7 @@ public class MarkovModel {
     }
     //make a prediction based on past data and probability, returns -1 if not right amount of data
     public int makePrediction(int[] states){
-        if(states.length != orders-1){return -1;}//not right length todo add filler option
+        if(states.length != orders-1){return -1;}//not right length
         //get counts
         int[] counts = new int[num_states];   //index corresponds to states
         int total_count = getTotalCount(states, counts); //get total count of occurrences for this combination
