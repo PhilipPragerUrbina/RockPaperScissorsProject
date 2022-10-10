@@ -5,7 +5,7 @@
     <option name="PROGRAM_PARAMETERS" value="127.0.0.1 127.0.0.1 a" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="RockPaperScissors.*" />
+        <option name="PATTERN" value="RockPaperScissors.Markov.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

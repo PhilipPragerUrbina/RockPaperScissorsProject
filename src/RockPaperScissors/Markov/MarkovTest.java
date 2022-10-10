@@ -1,20 +1,20 @@
-package RockPaperScissors;
+package RockPaperScissors.Markov;
 
 import java.util.Scanner;
-
+//some markov tests
 public class MarkovTest {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter text");
         String in = scanner.nextLine();
-        System.out.println("Predicted: " +  finishWord(in, 2));
+        System.out.println("Predicted: " +  finishWord(in, 2, 3));
       //  basicTest();
     }
 
     //predict letters to finish a word
     //make sure to include whole text, so it can learn
-    private static String finishWord(String so_far,int order){
+    private static String finishWord(String so_far,int order, int num_predictions){
         MarkovModel model = new MarkovModel(255,order); //create markov model with ascii states and specified order
         //training
         for (int i = 0; i < so_far.length(); i++) {
@@ -46,9 +46,8 @@ public class MarkovTest {
         }
 
         //predict until whitespace or until too many have been predicted
-        final int MAX_LENGTH = 2;
         String predictions = "";
-        for (int i = 0; i < MAX_LENGTH; i++) {
+        for (int i = 0; i < num_predictions; i++) {
          //   System.out.println((char)characters[0] + " " + (char)characters[1] );
 
             int predictioni = model.makePrediction(characters);
