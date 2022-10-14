@@ -29,7 +29,8 @@ public class MarkovBabyTests {
         int[] data = {0,1,2,3,4,1,2,2,3,1,3,0,1,2,3,0,4,3,4,0,0,1,2,3,2,1,0,0,2,2,2,3,1}; //random data
         //print a bunch of tables
         printAssignmentTable(data,ComplexBabyState.SLEEPING, ComplexBabyState.EATING,1,20,1);
-
+        printAssignmentTable(data,ComplexBabyState.EATING, ComplexBabyState.SLEEPING,1,20,1);
+        printAssignmentTable(data,ComplexBabyState.FUSSING, ComplexBabyState.EATING,1,20,1);
     }
 
     //print a table comparing probability of end state to number of transitions
