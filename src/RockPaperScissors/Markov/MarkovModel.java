@@ -8,7 +8,6 @@ public class MarkovModel {
     private int orders;
     int[] state_matrix; //matrix(Actually a TENSOR if more than 2d)
     ArrayList<Integer> prev_states;
-    int num_data = 0;//how much data has been collected
     public MarkovModel(int num_states, int orders){
         prev_states = new ArrayList<>(); //store the last couple states
         this.num_states = num_states; //number of states
@@ -20,6 +19,14 @@ public class MarkovModel {
     public void addDataPoints(int[] states){
         for (int state : states) {
             addDataPoint(state);
+        }
+    }
+
+    //clear all data
+    private void clear(){
+        prev_states.clear(); //clear last states
+        for (int i = 0; i < state_matrix.length; i++) {
+            state_matrix[i]=0; //set all counts to 0
         }
     }
 
@@ -42,6 +49,7 @@ public class MarkovModel {
             prev_states.remove(0);
         }
     }
+
     //make a prediction based on past data and probability, returns -1 if not right amount of data
     public int makePrediction(int[] states){
         if(states.length != orders-1){return -1;}//not right length
