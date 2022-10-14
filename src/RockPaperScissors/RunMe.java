@@ -8,7 +8,7 @@ public class RunMe {
 	public static void main(String[] args) {
 		RPS game = new RPS(); 							// create the game object
 
-
+//todo store all human player data into file, for markov and ai trianing
 		//	Player p1 = new SendingNetworkedPlayer(new HumanPlayer(), 5000);
 		//	Player p2 = new ReceivingNetworkedPlayer(args[0], 4900);
 	Player p1 = new MarkovPlayer(3);
