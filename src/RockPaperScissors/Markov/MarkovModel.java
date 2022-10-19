@@ -50,7 +50,7 @@ public class MarkovModel {
         }
     }
 
-    //make a prediction based on past data and probability, returns -1 if not right amount of data
+    //make a prediction based on past data and probability, returns -1 if not enough data
     public int makePrediction(int[] states){
         if(states.length != orders-1){return -1;}//not right length
         //get counts

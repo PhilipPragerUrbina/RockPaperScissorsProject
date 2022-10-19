@@ -3,7 +3,7 @@ package RockPaperScissors;
 import RockPaperScissors.Players.*;
 
 public class RunMe {
-	private static final int TOTAL_GAMES = 100000;
+	private static final int TOTAL_GAMES = 1000000;
 
 	public static void main(String[] args) {
 		RPS game = new RPS(); 							// create the game object
@@ -11,8 +11,8 @@ public class RunMe {
 //todo store all human player data into file, for markov and ai training
 		//	Player p1 = new SendingNetworkedPlayer(new HumanPlayer(), 5000);
 		//	Player p2 = new ReceivingNetworkedPlayer(args[0], 4900);
-	Player p1 = new AIPlayer(10,3);
-	Player p2 = new AIPlayer(1,1);
+	Player p1 = new AIPlayer(3,2);
+	Player p2 = new MarkovPlayer(2);
 
 
 

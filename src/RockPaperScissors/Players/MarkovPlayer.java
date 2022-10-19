@@ -12,6 +12,8 @@ public class MarkovPlayer implements Player {
     private MarkovModel model; //the markov model
     private int num_to_save; //how many moves to save for the n order model
     private boolean most_probable;
+    private RandomPlayer random_player = new RandomPlayer();   //fallback random player
+
     public MarkovPlayer(int order , boolean use_most_probable_move){
         num_to_save = order;
         model = new MarkovModel(3,order);
@@ -26,7 +28,7 @@ public class MarkovPlayer implements Player {
     @Override
     public int getMove() {
         if(last_moves.size() < num_to_save){
-            return RPS.ROCK; //not enough data return rock
+            return random_player.getMove(); //not enough data return random
         }
         //create move arrays
         int[] last_moves_array = new int[num_to_save];
@@ -37,6 +39,9 @@ public class MarkovPlayer implements Player {
         int opponent_move_prediction = model.makePrediction(last_moves_array);
         if(most_probable){
             opponent_move_prediction = model.getMostProbableState(last_moves_array); //use most probable move instead of probability based move
+        }
+        if(opponent_move_prediction == -1){ //not enough data
+            return random_player.getMove(); //choose random move
         }
 
         //return move to beat predicted move
